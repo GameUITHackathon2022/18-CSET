@@ -1,0 +1,5 @@
+mysql:
+  host: "haov_services_hackathon_sql"
+  database: "uit_game_hackathon"
+  user: "admin"
+  password: "admin"

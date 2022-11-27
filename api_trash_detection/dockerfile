@@ -1,0 +1,29 @@
+FROM nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
+WORKDIR /base
+
+RUN ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-get update && apt-get install -y libglib2.0-0 libsm6 libxext6 libxrender-dev libgl1-mesa-glx
+RUN apt-get install -y  python3-pip cmake wget llvm
+RUN pip3 install numpy==1.16.1
+RUN pip3 install opencv-python==4.2.0.32
+RUN pip3 install configparser==5.0.2
+RUN pip3 install six==1.16.0
+RUN pip3 install future==0.18.2
+RUN pip3 install python-multipart
+RUN pip3 install uvicorn==0.14.0 fastapi==0.65.2
+RUN pip3 install requests
+RUN pip3 install pillow==8.0.0
+RUN pip3 install multipledispatch
+COPY ./requirements.txt .
+# RUN pip3 install -r requirements.txt
+RUN pip3 install torch>=1.7.0 torchvision>=0.8.1 tqdm>=4.64.0
+RUN pip3 install pandas>=1.1.4
+RUN pip3 install IPython
+RUN pip3 install psutil
+RUN pip3 install PyYAML>=5.3.1
+
+RUN pip3 install matplotlib>=3.2.2
+RUN pip3 install seaborn>=0.11.0
+CMD nvidia-smi; sh start_service.sh
+

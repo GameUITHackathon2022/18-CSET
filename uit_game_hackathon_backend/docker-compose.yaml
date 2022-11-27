@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  haov_services_hackathon:
+    build:
+      context: ./
+      dockerfile: dockerfile
+    container_name: mlcv_haov_uit_hackathon
+    ports:
+      - 8003:80
+    networks:
+      - haov_services_hackathon_net
+    restart: unless-stopped
+    volumes:
+      - ./:/base
+    depends_on:
+      - haov_services_hackathon_sql
+
+  haov_services_hackathon_sql:
+    build:
+      context: ./
+      dockerfile: sql/Dockerfile
+    container_name: haov_services_hackathon_sql
+    networks:
+      - haov_services_hackathon_net
+    restart: always
+    environment:
+      MYSQL_DATABASE: uit_game_hackathon
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'admin'
+      LANG: C.UTF_8
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+      
+networks:
+  haov_services_hackathon_net:

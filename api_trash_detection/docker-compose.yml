@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+    trash_detection:
+        build:
+            context: ./
+            dockerfile: dockerfile
+        container_name: service_trash_detection
+        ports:
+            - 8005:80
+        restart: unless-stopped
+        volumes:
+            - ./:/base
+        deploy:
+          resources:
+            reservations:
+              devices:
+              - driver: nvidia
+                device_ids: ['0']
+                capabilities: [gpu]
+    
+###############
+    
+    

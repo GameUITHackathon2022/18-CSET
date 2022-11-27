@@ -1,0 +1,159 @@
+.top20 {
+    height: 605px;
+    width: 70%;
+    background: rgba(250,250,250,0.5);
+    /* background: url(../public/tree3.jpg); */
+    border-radius: 25px;
+    margin-left: 180px;
+    margin-top: 30px;
+    padding-top: 16px;
+}
+
+.top20_header {
+    display: flex;
+    flex-direction: column;
+    background: #D9D9D9;
+    text-align: center;
+    justify-content: center;
+    width: 92%;
+    height: 67px;
+    margin: 46px 30px 5px 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+
+    color: #000000;
+    border-radius:25px;
+}
+
+.top20_tieuchi {
+    display:flex;
+    justify-content:space-between;
+    width: 92%;
+height: 44px;
+
+    border-radius: 32px;
+background: #D9D9D9;
+margin: 0px 30px 5px 40px;
+color: #2FB814;
+}
+
+.top20_tieuchi_left {
+    display:flex;
+    flex-direction: row;
+    margin-left:40px;
+}
+.top20_tieuchi_left h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-right:20px;
+    margin-right:20px;
+
+    font-size: 30px;
+}
+.top20_tieuchi p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-right: 150px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+}
+.top20_info {
+    background: #D9D9D9;
+border-radius: 32px;
+margin: 0px 45px 5px 40px;
+display:flex;
+justify-content: space-between;
+height: 62.65px;
+width: 92%;
+}
+.top20_info_left {
+    display:flex;
+    flex-direction: row;
+
+}
+
+.top20_info_left h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-left:20px;
+    margin-left:20px;
+    color:#2FB814;
+    font-size: 30px;
+    margin-right:40px
+}
+.top20_info p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-right: 64px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+}
+.top20_info img {
+    height:30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.top20_info_right {
+    display:flex;
+    flex-direction: row;
+    margin-left:40px;
+}
+.seperator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    margin-right: 24px;
+    height: 24px;
+    width: 1px;
+    background-color: #2FB814;
+}
+
+@media (min-width: 740px) and (max-width: 1023px){
+    .top20 {
+        margin-left: 90px;
+    }
+
+    .top20_header {
+        margin: 40px 0px 8px 22px;
+    }
+
+    .top20_tieuchi {
+        margin: 0px 0px 8px 22px;
+    }
+
+    .top20_tieuchi p {
+        padding-right: 108px;
+    }
+    
+    .top20_info {
+        margin: 0px 0px 8px 22px;
+        height: 42px;
+    }
+
+    .top20_info p {
+        padding-right: 90px;
+    }
+}
